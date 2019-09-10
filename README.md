@@ -1,4 +1,4 @@
-# Statistics for Multimodality: why, when, how --- an invitation
+# Statistics for Multimodality: why, when, how – an invitation
 
 ## Installing R
 
