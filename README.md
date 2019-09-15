@@ -4,6 +4,12 @@ In these pages we show you how to perform the analyses described in the paper st
 
 ## Installing R
 
+Before running any R code, you have to install the R program on your computer; we will assume that this has not been done and you are using a computer without R already present. In fact, we will recommend installing two programs: the basic 'R engine' that does all the work, and a further 'development environment' that makes it easy to create R programs, edit and save them, and run them to get results. Both are free software and are available for Windows, Macs, and Linux operating systems. 
+
+First, installing R. For this, you need to go to the relevant website for the R project and download the installation program that is appropriate for your operating system. The core R website is at: https://www.r-project.org/. 
+
+The development environment we recommend for using R is called RStudio. This also has to be downloaded and installed. The website for RStudio is: https://www.rstudio.com/. 
+
 ## How to use this repository
 
 ## Loading data into R
