@@ -18,6 +18,8 @@ The development environment we recommend for using R is called RStudio. This als
 
 ## Measuring statistical power
 
+A large number of effect size online calculators for different statistical tests can be found here: http://www.psychometrica.de/effect_size.html
+
 ## Measuring agreement between annotators
 
 ## Literature and additional resources
