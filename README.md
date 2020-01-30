@@ -60,8 +60,8 @@ So this corresponds to a table that begins like this:
  ----- | --- |
 1 | 1 |
 2 | 6  |
-3 | 4 |
-4 | 3 |
+3 | 3 |
+4 | 4 |
 5 | 9 |
 ... | ... |
 *n* | ... |
