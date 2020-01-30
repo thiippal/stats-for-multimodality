@@ -22,7 +22,7 @@ As stated in the paper, loading data into R is quite straightforward, so we desc
 [here](./networks.xlsx) (networks) 
 and [here](./schematics.xlsx) (schematics). These are not how the data were originally stored, we will describe how to set up the data more sensibly below because then we can show some more of the ways that R makes this very easy to process. Each of the files here consists of a simple list of numbers in a single column. These could be a sequence of measurements or any other values. For the present example they are just the counts of 'text blocks' found in each of a collection of diagrams: i.e., each row is a diagram, and the number is the count of text blocks in that diagram.
 
-<p>For processing with R, we then save this information as a csv file using the respective 'save as' command of the spreadsheet program being used. If we do this for each file, we get two new files, which we've named here as: ```networks-data.csv``` and ```schematics-data.csv```. 
+<p>For processing with R, we then save this information as a csv file using the respective 'save as' command of the spreadsheet program being used. If we do this for each file, we get two new files, which we've named here as: 'networks-data.csv'  and 'schematics-data.csv'. 
 If you have installed R and are using RStudio as we suggested above, then there is the simple command, probably upper right, to 'Import Dataset'. This gives a couple of options and the relevant one is 'From text (readr)'. There is an option for importing directly from the Excel files (which end in .xslx) as well, but that is only for Excel files and so we stick with the more general method for csv files here -- both methods would give the same result.
 
 ![RStudio data import options](R-import-menu.png)
@@ -41,7 +41,7 @@ instruction
 
 ```networks_data <- read_csv ( ... )```
 
-is the line that tells R to read the csv file and call the result ```networks_data```. This is
+is the line that tells R to read the csv file and call the result 'networks_data'. This is
 the name that we can then use to manipulate the data further as we shall see in a moment; note here that because the hyphen in the original file name has been convered to an underscore as the hyphen has a special meaning in R. Upper left
 in the window we can see the result of the R command
 
