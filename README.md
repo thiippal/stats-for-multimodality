@@ -31,6 +31,10 @@ When you click this, the following window gets popped up and you should follow t
 
 ![RStudio data import window](R-importing-data.png)
 
+When 'import' is clicked, all that happens is that R takes the code that was created as shown in (3) and 'executes' it, i.e., carries out the instructions given there. This is shown directly in the main RStudio window and is exactly the same as if you (or anyone else) had just typed in the commands. This is the first example then of how doing work with R is *self-documenting* in the sense that you always have a precise record of what was done to which data. This means then that the RStudio main windows then looks as following:
+
+![RStudio window after importing data](R-import-results.png)
+
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
 ## Comparing measurements and counts: t-test and chi-square test
