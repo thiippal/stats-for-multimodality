@@ -29,7 +29,7 @@ If you have installed R and are using RStudio as we suggested above, then there 
 
 When you click this, the following window gets popped up and you should follow the numbered instructions to actually get your data into R.
 
-![RStudio data import window](R-import-window.png)
+![RStudio data import window](R-importing-data.png)
 
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
