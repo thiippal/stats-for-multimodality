@@ -56,14 +56,14 @@ some variable is often seen as taking 'observations') of a variable, i.e., we ar
 
 So this corresponds to a table that begins like this:
 
-    |  X1 |
+ |   |  X1 |
  ----- | --- |
 1 | 1 |
 2 | 6  |
 3 | 4 |
 4 | 3 |
 5 | 9 |
-| ... |
+  | ... |
 
 We can then do exactly the same for the schematics data file as well. That gives
 us two dataframes, one called 'networks' and the other called 'schematics'.
