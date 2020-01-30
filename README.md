@@ -73,9 +73,16 @@ us two dataframes, one called 'networks_data' and the other called 'schematics_d
 
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
-## Comparing measurements and counts: t-test and chi-square test
+### Extracting sets of values from dataframes
 
 If you have loaded the data as described in the previous section, then you can just perform the tests as given in the paper. More specifically, we can use the R operator of *selecting columns* to cmopare any collections of measurements or scores from a bigger table of data, or dataframe. 
+
+### Running some basic descriptive statistics
+
+### Running the first statistical tests
+
+## Comparing measurements and counts: t-test and chi-square test
+
 
 ## Measuring statistical power
 
