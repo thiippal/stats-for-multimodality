@@ -22,7 +22,7 @@ As stated in the paper, loading data into R is quite straightforward, so we desc
 [here](./networks.xlsx) (networks) 
 and [here](./schematics.xlsx) (schematics). These are not how the data were originally stored, we will describe how to set up the data more sensibly below because then we can show some more of the ways that R makes this very easy to process. Each of the files here consists of a simple list of numbers in a single column. These could be a sequence of measurements or any other values. For the present example they are just the counts of 'text blocks' found in each of a collection of diagrams: i.e., each row is a diagram, and the number is the count of text blocks in that diagram.
 
-<p>For processing with R, we then save this information as a csv file using the respective 'save as' command of the spreadsheet program being used. If we do this for each file, we get the two new files networks.csv and schematics.csv. 
+<p>For processing with R, we then save this information as a csv file using the respective 'save as' command of the spreadsheet program being used. If we do this for each file, we get two new files, which we've named here as: ```networks-data.csv``` and ```schematics-data.csv```. 
 If you have installed R and are using RStudio as we suggested above, then there is the simple command, probably upper right, to 'Import Dataset'. This gives a couple of options and the relevant one is 'From text (readr)'. There is an option for importing directly from the Excel files (which end in .xslx) as well, but that is only for Excel files and so we stick with the more general method for csv files here -- both methods would give the same result.
 
 ![RStudio data import options](R-import-menu.png)
@@ -39,18 +39,18 @@ In the console pane, lower left, we can see that the code constructed in the pre
 step has simply been copied in. R reports on what it is doing after each line. The
 instruction
 
-```networks <- read_csv ( ... )```
+```networks_data <- read_csv ( ... )```
 
 is the line that tells R to read the csv file and call the result 'networks'. This is
 the name that we can then use to manipulate the data further as we shall see in a moment. Upper left
 in the window we can see the result of the R command
 
-```View (networks)```
+```View (networks_data)```
 
-which just tells R to show what is in the data called 'networks'; we'll return to the exact format of this
+which just tells R to show what is in the data called 'networks_data'; we'll return to the exact format of this
 data, which in R is called a *dataframe* in the next section. Upper right we see a summary
 of what data R currently knows about, i.e., either we have created by running code or
-by importing. This summary says that the dataframe called 'networks' currently has
+by importing. This summary says that the dataframe called 'networks_data' currently has
 21 values (or 'observations' since R is principally for doing statistics and taking particular values of
 some variable is often seen as taking 'observations') of a variable, i.e., we are only measuring one thing here, the number of text blocks, which are then all in a single column just as they were in the original Excel and csv files.
 
@@ -69,7 +69,7 @@ So this corresponds to a table that begins like this:
 Since our original spreadsheet did not give a name for the column of values/observations, R makes up a name for the column here automatically, that is the 'X1' at the top. We will see in the next section how we can also just give names in the original spreadsheet and then these will be taken over to the R dataframe that we get when we import.
 
 Finally, we can then do exactly the same for the schematics data file as well. That gives
-us two dataframes, one called 'networks' and the other called 'schematics'. The next step is then to manipulate these tables so that we can run the stastistical tests described in the paper on them.
+us two dataframes, one called 'networks_data' and the other called 'schematics_data'. The next step is then to manipulate these tables so that we can run the stastistical tests described in the paper on them.
 
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
