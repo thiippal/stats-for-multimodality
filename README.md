@@ -75,11 +75,33 @@ us two dataframes, one called 'networks_data' and the other called 'schematics_d
 
 ### Extracting sets of values from dataframes
 
-If you have loaded the data as described in the previous section, then you can just perform the tests as given in the paper. More specifically, we can use the R operator of *selecting columns* to cmopare any collections of measurements or scores from a bigger table of data, or dataframe. 
+If you have loaded the data as described in the previous section, then you can just perform the tests as given in the paper. More specifically, we can use the R operator of *selecting columns* to compare any collections of measurements or scores from a bigger table of data, or dataframe. This is usually needed because the particular statistical functions that we need just want to get the values or counts that they need to do their calculations with. Dataframes usually have much more information in them because these are used in R for organising whole sets of data. 
+
+So, if we want to get just the values in the X1 column of our dataframe 'networks_data' (which in this case is the only column but we still have to tell R to select it), we write:
+
+```networks_data$X1```
+
+the '$' is the column selection operator, and the 'X1' is the name of the column we want to get values from. So this R can be read as 'get all the values in the dataframe networks_data that are in the column called X1'. 
 
 ### Running some basic descriptive statistics
 
-### Running the first statistical tests
+When we have all the values, we can also store them somewhere else so that we can use them again and again. For example, if we want to keep them in a store called 'networks', we can write:
+
+```networks <- networks_data$X1```
+
+`networks`then just contains the values or numbers from the column; it is just an array of numbers, not a dataframe. With this we can perform the basic descriptive statistics as described in the paper, such as:
+
+```mean (networks)```
+
+or
+
+```sd (networks)```
+
+and get the results that we saw in the paper.
+
+### Extracting values from more complicated data frames
+
+As noted above, we would rarely have spreadsheets with just single columns of numbers in them; it would be more usual to have a whole collection of data giving different kinds of judegements, measurements or counts for some particular data item. So the rows would typically be a data item and the columns would have all the various responses for that data item. 
 
 ## Comparing measurements and counts: t-test and chi-square test
 
