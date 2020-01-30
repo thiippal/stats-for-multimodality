@@ -33,7 +33,7 @@ When you click this, the following window gets popped up and you should follow t
 
 When 'import' is clicked, all that happens is that R takes the code that was created as shown in (3) and 'executes' it, i.e., carries out the instructions given there. This is shown directly in the main RStudio window and is exactly the same as if you (or anyone else) had just typed in the commands. This is the first example then of how doing work with R is *self-documenting* in the sense that you always have a precise record of what was done to which data. This means then that the RStudio main windows then looks as following:
 
-![RStudio window after importing data](R-import-results.png)
+![RStudio window after importing data](R-import-results.png) 
 
 In the console pane, lower left, we can see that the code constructed in the previous
 step has simply been copied in. R reports on what it is doing after each line. The
