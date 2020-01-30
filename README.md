@@ -23,7 +23,7 @@ As stated in the paper, loading data into R is quite straightforward, so we desc
 <p>For processing with R, we then save this information as a csv file using the respective 'save as' command of the spreadsheet program being used. If we do this for each file, we get the two new files networks.csv and schematics.csv. 
 If you have installed R and are using RStudio as we suggested above, then there is the simple command, probably upper right, to 'Import Dataset'. This gives a couple of options and the relevant one is 'From text (readr)'. There is an option for importing directly from the Excel files (which end in .xslx) as well, but that is only for Excel files and so we stick with the more general method for csv files here -- both methods would give the same result.
 
-<IMG href="https://github.com/thiippal/stats-for-multimodality/blob/master/R-import-menu.png"/>
+![RStudio data import options](https://github.com/thiippal/stats-for-multimodality/blob/master/R-import-menu.png)
 
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
