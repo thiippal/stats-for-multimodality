@@ -63,7 +63,8 @@ So this corresponds to a table that begins like this:
 3 | 4 |
 4 | 3 |
 5 | 9 |
-  | ... |
+... | ... |
+*n* | ... |
 
 We can then do exactly the same for the schematics data file as well. That gives
 us two dataframes, one called 'networks' and the other called 'schematics'.
