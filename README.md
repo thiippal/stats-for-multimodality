@@ -81,7 +81,7 @@ So, if we want to get just the values in the X1 column of our dataframe 'network
 
 ```networks_data$X1```
 
-the '$' is the column selection operator, and the 'X1' is the name of the column we want to get values from. So this R can be read as 'get all the values in the dataframe networks_data that are in the column called X1'. 
+the '$' is the column selection operator, and the 'X1' is the name of the column we want to get values from. So this R code can be read as 'get all the values in the dataframe networks_data that are in the column called X1'. 
 
 ### Running some basic descriptive statistics
 
@@ -101,7 +101,10 @@ and get the results that we saw in the paper.
 
 ### Extracting values from more complicated data frames
 
-As noted above, we would rarely have spreadsheets with just single columns of numbers in them; it would be more usual to have a whole collection of data giving different kinds of judegements, measurements or counts for some particular data item. So the rows would typically be a data item and the columns would have all the various responses for that data item. 
+As noted above, we would rarely have spreadsheets with just single columns of numbers in them; it would be more usual to have a whole collection of data giving different kinds of judegements, measurements or counts for some particular data item. So the rows would typically be a data item and the columns would have all the various responses for that data item. It is just as straightforward to import these more complicated sets of data into R as it was for the simple case. So now lets take a more realistic example of a spreadsheet with different kinds of values in it and use the column selection operator to perform some different tests on that data.
+
+### Saving R code as a record of what was done on what data
+
 
 ## Comparing measurements and counts: t-test and chi-square test
 
