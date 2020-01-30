@@ -66,10 +66,10 @@ So this corresponds to a table that begins like this:
 ... | ... |
 *n* | ... |
 
-We can then do exactly the same for the schematics data file as well. That gives
-us two dataframes, one called 'networks' and the other called 'schematics'.
+Since our original spreadsheet did not give a name for the column of values/observations, R makes up a name for the column here automatically, that is the 'X1' at the top. We will see in the next section how we can also just give names in the original spreadsheet and then these will be taken over to the R dataframe that we get when we import.
 
-
+Finally, we can then do exactly the same for the schematics data file as well. That gives
+us two dataframes, one called 'networks' and the other called 'schematics'. The next step is then to manipulate these tables so that we can run the stastistical tests described in the paper on them.
 
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
