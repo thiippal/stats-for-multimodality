@@ -39,13 +39,13 @@ In the console pane, lower left, we can see that the code constructed in the pre
 step has simply been copied in. R reports on what it is doing after each line. The first line tells R to load the library that knows how to deal with csv files, called 'readr'. Second, the
 instruction
 
-```networks_data <- read_csv ( ... )```
+```networks_data <- read_csv( ... )```
 
 is the line that tells R to read the csv file and call the result 'networks_data'. This is
 the name that we can then use to manipulate the data further as we shall see in a moment; note here that the hyphen in the original file name has been convered to an underscore because the hyphen has a special meaning in R. Upper left
 in the window we can see the result of the R command
 
-```View (networks_data)```
+```View( networks_data )```
 
 which just tells R to show what is in the data called 'networks_data'; we'll return to the exact format of this
 data, which in R is called a *dataframe* in the next section. Upper right we see a summary
@@ -91,11 +91,11 @@ When we have all the values, we can also store them somewhere else so that we ca
 
 `networks`then just contains the values or numbers from the column; it is just an array of numbers, not a dataframe. With this we can perform the basic descriptive statistics as described in the paper, such as:
 
-```mean (networks)```
+```mean( networks )```
 
 or
 
-```sd (networks)```
+```sd( networks )```
 
 and get the results that we saw in the paper.
 
