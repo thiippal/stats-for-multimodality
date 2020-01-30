@@ -52,7 +52,15 @@ data, which in R is called a *dataframe* in the next section. Upper right we see
 of what data R currently knows about, i.e., either we have created by running code or
 by importing. This summary says that the dataframe called 'networks' currently has
 21 values (or 'observations' since R is principally for doing statistics and taking particular values of
-some variable is often seen as taking 'observations') of a variable, i.e., we are only measuring one thing here, the number o text blocks, which are then all in a single column just as they were in the original Excel and csv files.
+some variable is often seen as taking 'observations') of a variable, i.e., we are only measuring one thing here, the number of text blocks, which are then all in a single column just as they were in the original Excel and csv files.
+
+So this corresponds to a table that begins like this:
+
+| X1         |
+| ------------- :|
+| 1 |
+| 3   |
+| 4 |
 
 We can then do exactly the same for the schematics data file as well. That gives
 us two dataframes, one called 'networks' and the other called 'schematics'.
