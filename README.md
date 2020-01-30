@@ -41,8 +41,8 @@ instruction
 
 ```networks_data <- read_csv ( ... )```
 
-is the line that tells R to read the csv file and call the result 'networks'. This is
-the name that we can then use to manipulate the data further as we shall see in a moment. Upper left
+is the line that tells R to read the csv file and call the result ```networks_data```. This is
+the name that we can then use to manipulate the data further as we shall see in a moment; note here that because the hyphen in the original file name has been convered to an underscore as the hyphen has a special meaning in R. Upper left
 in the window we can see the result of the R command
 
 ```View (networks_data)```
