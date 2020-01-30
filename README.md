@@ -39,10 +39,10 @@ In the console pane, lower left, we can see that the code constructed in the pre
 step has simply been copied in. R reports on what it is doing after each line. The
 instruction
 
-```networks <- read_csv ( ...```
+```networks <- read_csv ( ... )```
 
 is the line that tells R to read the csv file and call the result 'networks'. This is
-the name that we can then use to manipulate the data further. Upper left
+the name that we can then use to manipulate the data further as we shall see in a moment. Upper left
 in the window we can see the result of the R command
 
 ```View (networks)```
@@ -52,7 +52,7 @@ data, which in R is called a *dataframe* in the next section. Upper right we see
 of what data R currently knows about, i.e., either we have created by running code or
 by importing. This summary says that the dataframe called 'networks' currently has
 21 values (or 'observations' since R is principally for doing statistics and taking particular values of
-some variable is often seen as taking 'observations') of 1 variable, i.e., we are only measuring one thing here, the number o text blocks, which are then all in a single column just as they were in the original Excel and csv files.
+some variable is often seen as taking 'observations') of a variable, i.e., we are only measuring one thing here, the number o text blocks, which are then all in a single column just as they were in the original Excel and csv files.
 
 We can then do exactly the same for the schematics data file as well. That gives
 us two dataframes, one called 'networks' and the other called 'schematics'.
