@@ -36,13 +36,13 @@ When 'import' is clicked, all that happens is that R takes the code that was cre
 ![RStudio window after importing data](R-import-results.png) 
 
 In the console pane, lower left, we can see that the code constructed in the previous
-step has simply been copied in. R reports on what it is doing after each line. The
+step has simply been copied in. R reports on what it is doing after each line. The first line tells R to load the library that knows how to deal with csv files, called 'readr'. Second, the
 instruction
 
 ```networks_data <- read_csv ( ... )```
 
 is the line that tells R to read the csv file and call the result 'networks_data'. This is
-the name that we can then use to manipulate the data further as we shall see in a moment; note here that because the hyphen in the original file name has been convered to an underscore as the hyphen has a special meaning in R. Upper left
+the name that we can then use to manipulate the data further as we shall see in a moment; note here that the hyphen in the original file name has been convered to an underscore because the hyphen has a special meaning in R. Upper left
 in the window we can see the result of the R command
 
 ```View (networks_data)```
