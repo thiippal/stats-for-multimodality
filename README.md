@@ -25,6 +25,8 @@ If you have installed R and are using RStudio as we suggested above, then there 
 
 ![RStudio data import options](https://github.com/thiippal/stats-for-multimodality/blob/master/R-import-menu.png)
 
+![RStudio data import options](R-import-menu.png)
+
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
 ## Comparing measurements and counts: t-test and chi-square test
