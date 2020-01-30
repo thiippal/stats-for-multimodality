@@ -27,6 +27,10 @@ If you have installed R and are using RStudio as we suggested above, then there 
 
 ![RStudio data import options](R-import-menu.png)
 
+When you click this, the following window gets popped up and you should follow the numbered instructions to actually get your data into R.
+
+![RStudio data import window](R-import-window.png)
+
 ## Manipulating data with R: i.e., pushing it into shape for easy processing
 
 ## Comparing measurements and counts: t-test and chi-square test
