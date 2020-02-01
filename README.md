@@ -89,7 +89,7 @@ When we have all the values, we can also store them somewhere safe so that we ca
 
 ```networks <- networks_data$X1```
 
-The R operator '<-' takes what ever the value is on the righthand side (i.e., here all the individual values in the selected column) and stores this is the *variable* called 'networks', so networks then just contains the values or numbers from the column. This is simply an array of numbers, not a dataframe and with this we can perform the basic descriptive statistics as described in the paper, such as:
+As above, the R operator '<-' just takes what ever the value is on the righthand side (i.e., here all the individual values in the selected column) and stores this in the *variable* named on the lefthand side, i.e. 'networks'; so networks then just contains the values or numbers from the column. These numbers are simply kept as an array of numbers, not a dataframe, and with this we can perform the basic descriptive statistics as described in the paper, such as:
 
 ```mean( networks )```
 
