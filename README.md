@@ -42,7 +42,7 @@ instruction
 ```networks_data <- read_csv( ... )```
 
 is the line that tells R to read the csv file and call the result 'networks_data'. This is
-the name that we can then use to manipulate the data further as we shall see in a moment; note here that the hyphen in the original file name has been convered to an underscore because the hyphen has a special meaning in R. Upper left
+the name that we can then use to manipulate the data further as we shall see in a moment; note here that the hyphen in the original file name has been converted to an underscore because the hyphen has a special meaning in R. Upper left
 in the window we can see the result of the R command
 
 ```View( networks_data )```
@@ -85,11 +85,11 @@ the '$' is the column selection operator, and the 'X1' is the name of the column
 
 ### Running some basic descriptive statistics
 
-When we have all the values, we can also store them somewhere else so that we can use them again and again. For example, if we want to keep them in a store called 'networks', we can write:
+When we have all the values, we can also store them somewhere safe so that we can use them again and again. For example, if we want to keep them in a store called 'networks', we can write:
 
 ```networks <- networks_data$X1```
 
-`networks`then just contains the values or numbers from the column; it is just an array of numbers, not a dataframe. With this we can perform the basic descriptive statistics as described in the paper, such as:
+The R operator '<-' takes what ever the value is on the righthand side (i.e., here all the individual values in the selected column) and stores this is the *variable* called 'networks', so networks then just contains the values or numbers from the column. This is simply an array of numbers, not a dataframe and with this we can perform the basic descriptive statistics as described in the paper, such as:
 
 ```mean( networks )```
 
