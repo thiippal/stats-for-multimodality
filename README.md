@@ -116,5 +116,11 @@ A large number of effect size online calculators for different statistical tests
 ## Measuring agreement between annotators
 Described in the paper.
 
-## Literature and additional resources
+## Additional resources and useful links
+
+* [Best practice for preparing data files](http://www.sthda.com/english/wiki/best-practices-in-preparing-data-files-for-importing-into-r)
+
+
+
+## Further Reading and Literature
 To be extended.
