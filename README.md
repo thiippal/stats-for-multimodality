@@ -105,6 +105,12 @@ As noted above, we would rarely have spreadsheets with just single columns of nu
 
 This example is one of the speadsheets that the data used above for diagram types was actually taken from. We can see a screenshot of this as it looks in a typical spreadsheet program such as Excel like this:
 
+![Spreadsheet containing information about a collection of diagrams](diagram-types-spreadsheet.png)
+
+Here each row is a particular diagram from the dataset and the various columns then give information about that diagram. This is the form that one would use for most collections of data: the rows could be participants in an experiment, webpages, shots in a video, images in a textbook, or whatever. The columns are then the particular properties that we have analysed, or classified, those data items with. It is then our task, using R and statistical methods, to find out if there are any interesting patterns or relationships in that data. Separating out the process of collecting and recording the data from the process of looking for relations means that we can focus particularly on doing the best job in each stage and is always to be strongly recommended. 
+
+First, as usual, we need to get this information from the spreadsheet into R, which we do exactly as described above. We save the data as a csv-file and then import this into R. This gives us a dataframe that contains precisely the same information as the spreadsheet and which we can then use for exploration. The corresponding csv file can be downloaded here: [diagram type spreadsheet](./diagram-types.csv). 
+
 
 
 ### Saving R code as a record of what was done on what data
