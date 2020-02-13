@@ -140,8 +140,10 @@ Then, finally, if we just want the numbers in the 'text' column of this extracte
 
 If it is easier to follow, you could also break this down into smaller steps rather than doing it all at once. That involves 'saving' some of the values as we go along and using them later. For example, in the following we first make a smaller dataframe just containing the network diagram information, and then select the 'text' column with that:
 
-```network_diagrams <- diagram_types[diagram_types$diagram_type=="network",]
-texts_in_networks <- network_diagrams$text```
+```
+network_diagrams <- diagram_types[diagram_types$diagram_type=="network",]
+texts_in_networks <- network_diagrams$text
+```
 
 We can so this for any rows and columns, of course, and so get our numbers for doing the actual statistical tests. If we wanted, for example, to find the average (mean) number of arrows in schematic diagrams, we could write the following:
 
