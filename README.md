@@ -147,7 +147,7 @@ texts_in_networks <- network_diagrams$text
 
 We can so this for any rows and columns, of course, and so get our numbers for doing the actual statistical tests. If we wanted, for example, to find the average (mean) number of arrows in schematic diagrams, we could write the following:
 
-```mean( diagram_types[diagram_types$diagram_type=="schematic",]$arrows```
+```mean( diagram_types[diagram_types$diagram_type=="schematic",]$arrows )```
 
 which should give you the value back of 4.285; the mean for network diagrams is 13.015 - we'll leave the code for this as an exercise. 
 
