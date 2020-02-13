@@ -103,13 +103,30 @@ and get the results that we saw in the paper.
 
 As noted above, we would rarely have spreadsheets with just single columns of numbers in them; it would be more usual to have a whole collection of data giving different kinds of judegements, measurements or counts for some particular data item. So the rows would typically be a data item and the columns would have all the various responses for that data item. It is just as straightforward to import these more complicated sets of data into R as it was for the simple case. So now lets take a more realistic example of a spreadsheet with different kinds of values in it and use the column selection operator to perform some different tests on that data.
 
-This example is one of the speadsheets that the data used above for diagram types was actually taken from. We can see a screenshot of this as it looks in a typical spreadsheet program such as Excel like this:
+This example contains more information about diagram types, similar to that used above but now with more detail and some actual analysis counts in it. We can see a screenshot of this as it looks in a typical spreadsheet program such as Excel like this:
 
 ![Spreadsheet containing information about a collection of diagrams](diagram-types-spreadsheet.png)
 
 Here each row is a particular diagram from the dataset and the various columns then give information about that diagram. This is the form that one would use for most collections of data: the rows could be participants in an experiment, webpages, shots in a video, images in a textbook, or whatever. The columns are then the particular properties that we have analysed, or classified, those data items with. It is then our task, using R and statistical methods, to find out if there are any interesting patterns or relationships in that data. Separating out the process of collecting and recording the data from the process of looking for relations means that we can focus particularly on doing the best job in each stage and is always to be strongly recommended. 
 
 First, as usual, we need to get this information from the spreadsheet into R, which we do exactly as described above. We save the data as a csv-file and then import this into R. This gives us a dataframe that contains precisely the same information as the spreadsheet and which we can then use for exploration. The corresponding csv file can be downloaded here: [diagram type spreadsheet](./diagram-types.csv). 
+We can go to the import data tool as described above and make sure that we have selected the right options in the preview window of the tool: when we have the right options, the preview should actually look very similar to how the data appeared in the spreadsheet prorgram. If it looks different, for example by failing to separate columns properly, then we probably still need to tell R which character is actually being used to separate columns, etc. Practising with this by trial and error should quickly give you a feel for how this works. This is what the preview window looks like, for example, with the delimiter still left at commas (the default for Excel when running in English but not in German!):
+
+![Preview window with the wrong delimiter set](bad-preview.png)
+
+When we click the 'delimiter' field below the preview window and select semicolon instead of comma, then the preview window changes as follows:
+
+![Preview window with the correct delimiter set](good-preview.png)
+
+Here you can see as well that as default R has assumed that the first row of the spreadsheet contains the names of the columns, which was correct: i.e., the 'first row as names' field was ticked. This means that our dataframe will have the proper column names and not the internally generated name 'X1', etc. as above. The code that will read this file is as it appears in the window lower right. Clicking 'import' then executes the code and the dataframe is loaded. This is then also visible in the Rstudio data view as shown here:
+
+![RStudio data viewer](Rstudio-data-view.png)
+
+Pretty much, therefore, as it was in the spreadsheet image above; but now we can use all of the R tricks for processing the data further.
+
+
+
+When done, the R code for loading the file is shown and can be simply executed, again as before. Here is a screenshot of the data import tool with the data properly segmented and the generated code ready to be executed...
 
 
 
