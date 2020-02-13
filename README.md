@@ -128,15 +128,23 @@ Now we already know how to get individual columns: for example, if we wanted now
 
 ```diagram_types$text```
 
-This is just the column of numbers in that column as before. This doesn't really help us to test differences between different types of diagrams, though, because now all the network diagrams and schematic diagrams are mixed up. But since this information is available in the 'diagram_type' column it is easy just to take the text counts for each type of diagram separately. We won't worry about the R syntax at this point very much, you can work through examples as your confidence grows, but to pick just the values of the 'text' column for those diagrams that are of type 'network' we can just write:
+This is just the column of numbers in that column as before. This doesn't really help us to test differences between different types of diagrams, though, because now all the network diagrams and schematic diagrams are mixed up. But since this information is available in the 'diagram_type' column it is easy just to take the text counts for each type of diagram separately. We won't worry about the R syntax at this point very much, you can work through examples as your confidence grows, but to pick out just the rows of the dataframe for networks, i.e., for those diagrams that are of type 'network, we can just write:
 
 ```diagram_types[diagram_types$diagram_type=="network",]```
 
 the square brackets allow us to pick particular rows (or columns) and the expression in the square brackets just says which rows we want, i.e., all those where the value of 'diagram_type' in that row equals ('==' in R-speak) 'network'. Note that the '$' operator in the middle is just the same as before, i.e., it says get all the values in the column 'diagram_type'. The double equals sign then says we are only interested in those values which are 'network' and putting them in the square brackets (with a comma) does the final selection. 
 
-We can so this for any rows and columns, of course, and so get our numbers for doing the actual statistical tests. 
+Then, finally, if we just want the numbers in the 'text' column of this extracted data frame, we can use the '$' operator again, like this:
 
-Having all the information is the same dataframe is quite useful for more advanced tests as well. For example, what if we wanted to see if we could predict the type of diagram by known the number of texts and the number of arrows in a diagram - this information we need is all there in the single dataframe and is ready for R to do the work.
+```diagram_types[diagram_types$diagram_type=="network",]$text```
+
+We can so this for any rows and columns, of course, and so get our numbers for doing the actual statistical tests. If we wanted, for example, to find the average (mean) number of arrows in schematic diagrams, we could write the following:
+
+```mean( diagram_types[diagram_types$diagram_type=="schematic",]$arrows```
+
+which should give you the value back of 4.285; the mean for network diagrams is 13.015 - we'll leave the code for this as an exercise. 
+
+Having all the information is the same dataframe is very useful for more advanced tests as well. For example, what if we wanted to see if we could predict the type of diagram by knowing the number of texts and the number of arrows in a diagram? - the information we need is all there in the single dataframe and so is already ready for R to do the work (which would be another single line of R code!).
 
 ### Saving R code as a record of what was done on what data
 
