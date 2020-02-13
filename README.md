@@ -132,7 +132,7 @@ This is just the column of numbers in that column as before. This doesn't really
 
 ```diagram_types[diagram_types$diagram_type=="network",]```
 
-the square brackets allow us to pick particular rows (or columns) and the expression in the square brackets just says which rows we want, i.e., all those where the value of 'diagram_type' in that row equals ('==' in R-speak) 'network'. Note that the '$' operator in the middle is just the same as before, i.e., it says get all the values in the column 'diagram_type'. The double equals sign then says we are only interested in those values which are 'network' and putting them in the square brackets (with a comma) does the final selection. 
+the square brackets allow us to pick particular rows (or columns) and the expression in the square brackets just says which rows we want, i.e., all those where the value of 'diagram_type' in that row equals ('==' in R-speak) 'network'. Note that the '$' operator in the middle is just the same as before, i.e., it says get all the values in the column 'diagram_type'. The double equals sign then says we are only interested in those values which are 'network' and putting them in the square brackets (with a comma to say that we want rows not columns) does the final selection. 
 
 Then, finally, if we just want the numbers in the 'text' column of this extracted data frame, we can use the '$' operator again, like this:
 
