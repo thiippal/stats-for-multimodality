@@ -124,11 +124,19 @@ Here you can see as well that as default R has assumed that the first row of the
 
 Pretty much, therefore, as it was in the spreadsheet image above; but now we can use all of the R tricks for processing the data further.
 
+Now we already know how to get individual columns: for example, if we wanted now to see the number of 'texts' in each of the diagrams, we just need to get 'text' column, which we can do by writing:
 
+```diagram_types$text```
 
-When done, the R code for loading the file is shown and can be simply executed, again as before. Here is a screenshot of the data import tool with the data properly segmented and the generated code ready to be executed...
+This is just the column of numbers in that column as before. This doesn't really help us to test differences between different types of diagrams, though, because now all the network diagrams and schematic diagrams are mixed up. But since this information is available in the 'diagram_type' column it is easy just to take the text counts for each type of diagram separately. We won't worry about the R syntax at this point very much, you can work through examples as your confidence grows, but to pick just the values of the 'text' column for those diagrams that are of type 'network' we can just write:
 
+```diagram_types[diagram_types$diagram_type=="network",]```
 
+the square brackets allow us to pick particular rows (or columns) and the expression in the square brackets just says which rows we want, i.e., all those where the value of 'diagram_type' in that row equals ('==' in R-speak) 'network'. Note that the '$' operator in the middle is just the same as before, i.e., it says get all the values in the column 'diagram_type'. The double equals sign then says we are only interested in those values which are 'network' and putting them in the square brackets (with a comma) does the final selection. 
+
+We can so this for any rows and columns, of course, and so get our numbers for doing the actual statistical tests. 
+
+Having all the information is the same dataframe is quite useful for more advanced tests as well. For example, what if we wanted to see if we could predict the type of diagram by known the number of texts and the number of arrows in a diagram - this information we need is all there in the single dataframe and is ready for R to do the work.
 
 ### Saving R code as a record of what was done on what data
 
