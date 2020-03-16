@@ -199,7 +199,7 @@ which tells us that there is no significant difference between the means of the 
 
 Note also that there are websites that do similar tasks for you - for example, copying the data of the two columns into the website https://www.socscistatistics.com/tests/studentttest/default2.aspx quickly gives the same results, but without the self-documentation that using R provides you with.
 
-### Chi-square test
+### chi-square test
 
 Noe lets do exactly the same for the chi-square test. Here we take the data from Kong as given in the paper: [here](./kong-data.csv) (Kong's data comparing the Sun and the Oriental Daily). The structure of this data frame is a little more interesting as, as described in our paper, we are dealing here with a 2x3 contingency table, with two newspapers and counts for three kinds of multimodal information: text, photographs and diagrams. This means that we should obtain both sensible rows and columns in the resulting data frame when we import it. Using the import tool as before to create the data frame generates the following code:
 
@@ -228,7 +228,34 @@ r <- r[, -1]
 
 what this does in words is (line-by-line): take a copy of the data that we just imported in kong_data and call it r. Use the values in all of the first column (indicated by the square brackets after r) to set the names of the rows of that data frame (with rownames). Then take all the columns *apart* from the first one (indicated by using '-1' as the column number) and make this the value of r. The last step then throws away the redundant column we had with the row names in it. You can try this out line by line in R and look at what happens to the value of 'r' after each step to see what is going on. Remember that 'r' can do these kinds of operations for enormous tables so using large bodies of data is generally straightforward. After do this, if we look at r we have precisely the contingency table that we want, as we can see in the following:
 
+![Kong's data as a data frame](kong_data.png)
 
+Note that the rows are now given proper names rather than just numbers as in the examples above. If we have a table such as this, then the chi-square test is straightforward:
+
+```
+> chisq.test(r)
+
+	Pearson's Chi-squared test
+
+data:  r
+X-squared = 167.31, df = 2, p-value < 2.2e-16
+```
+
+so, again, we see that the differences between the various conditions are highly significant.
+
+There are a range of similar tests that one can perform with the data in this form. For example, Fisher's exact test is sometimes considered to be more accurate than the chi-square test, especially when the counts are low. Here is how we can perform the test in R:
+
+```
+> fisher.test(r)
+
+	Fisher's Exact Test for Count Data
+
+data:  r
+p-value < 2.2e-16
+alternative hypothesis: two.sided
+```
+
+In this case we obtain more or less the same result because the counts were in any case quite high and so we were not running into accuracy problems with chi-square anyway.
 
 
 
