@@ -158,6 +158,9 @@ Having all the information is the same dataframe is very useful for more advance
 
 ## Comparing measurements and counts: t-test and chi-square test
 
+### t-test
+As described in the paper, the t-test is a way of finding whether two collections of data have significantly different means or not: if they do, then there are good grounds for considering there to be some difference between data collected according to the two conditions compared. Performing a t-test in R is extremely easy - first, as usual, here is a csv-file containing two columns of numbers, which correspond to measured or observed values from two samples, regardless of how these were collected: [here](./t-test-data-same-1.csv) (test data for the t-test).
+
 
 ## Measuring statistical power
 
