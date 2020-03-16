@@ -199,6 +199,39 @@ which tells us that there is no significant difference between the means of the 
 
 Note also that there are websites that do similar tasks for you - for example, copying the data of the two columns into the website https://www.socscistatistics.com/tests/studentttest/default2.aspx quickly gives the same results, but without the self-documentation that using R provides you with.
 
+### Chi-square test
+
+Noe lets do exactly the same for the chi-square test. Here we take the data from Kong as given in the paper: [here](./kong-data.csv) (Kong's data comparing the Sun and the Oriental Daily). The structure of this data frame is a little more interesting as, as described in our paper, we are dealing here with a 2x3 contingency table, with two newspapers and counts for three kinds of multimodal information: text, photographs and diagrams. This means that we should obtain both sensible rows and columns in the resulting data frame when we import it. Using the import tool as before to create the data frame generates the following code:
+
+```
+ibrary(readr)
+> kong_data <- read_delim("Desktop/john/papers-in-progress/submitted/stats-for-multimodalists/Example-datasets/kong-data.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+```
+
+more or less as before. The first column is where the names of the rows ends up; this is not ideal and there are other ways of reading files that would grab the row names directly, but we will leave that for now. The important information we need is given by the counts in the two columns (corresponding to the two newspaper) in each row (corresponding to the types of multimodal information). Since these latter are just the final two columns, we already know how to get these counts individually for each newspaper: for example, we could use the extraction expression:
+
+```
+> kong_data$`Oriental Daily`
+[1] 1551  560  133
+```
+to get the counts for that newspaper. 
+
+The chi-square test works with a contingency table, so now we need more than just the columns alone, we need to get a little table containing the scores. As suggested above, manipulating data so as to push it into shape for the various statistical tests is a common practice in R and R makes it relatively straightforward, usually offering several ways to achieve the same effect. Searching on the web for the particular task that you want to perform is usually the best way of getting to solutions very quickly because someone will usually have wanted to do the same before!
+
+Lets do some R to turn the table that we read in (with an extra column containing the row names) to a proper data frame that only includes the values we want and has proper column and row names. We'll do this with some 'quick and dirty' R as follows:
+
+```
+r <- as.data.frame( kong_data )
+rownames( r ) <- r[, 1]
+r <- r[, -1]
+```
+
+what this does in words is (line-by-line): take a copy of the data that we just imported in kong_data and call it r. Use the values in all of the first column (indicated by the square brackets after r) to set the names of the rows of that data frame (with rownames). Then take all the columns *apart* from the first one (indicated by using '-1' as the column number) and make this the value of r. The last step then throws away the redundant column we had with the row names in it. You can try this out line by line in R and look at what happens to the value of 'r' after each step to see what is going on. Remember that 'r' can do these kinds of operations for enormous tables so using large bodies of data is generally straightforward. After do this, if we look at r we have precisely the contingency table that we want, as we can see in the following:
+
+
+
+
+
 ## Measuring statistical power
 
 A large number of effect size online calculators for different statistical tests can be found here: http://www.psychometrica.de/effect_size.html. The paper sets out some of the basic ways of using these for the tests described in the paper.
