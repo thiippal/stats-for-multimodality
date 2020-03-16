@@ -205,7 +205,7 @@ Noe lets do exactly the same for the chi-square test. Here we take the data from
 
 ```
 ibrary(readr)
-> kong_data <- read_delim("Desktop/john/papers-in-progress/submitted/stats-for-multimodalists/Example-datasets/kong-data.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+> kong_data <- read_delim("... location of file ... /kong-data.csv", ";", escape_double = FALSE, trim_ws = TRUE)
 ```
 
 more or less as before. The first column is where the names of the rows ends up; this is not ideal and there are other ways of reading files that would grab the row names directly, but we will leave that for now. The important information we need is given by the counts in the two columns (corresponding to the two newspaper) in each row (corresponding to the types of multimodal information). Since these latter are just the final two columns, we already know how to get these counts individually for each newspaper: for example, we could use the extraction expression:
@@ -226,14 +226,14 @@ rownames( r ) <- r[, 1]
 r <- r[, -1]
 ```
 
-what this does in words is (line-by-line): take a copy of the data that we just imported in kong_data and call it r. Use the values in all of the first column (indicated by the square brackets after r) to set the names of the rows of that data frame (with rownames). Then take all the columns *apart* from the first one (indicated by using '-1' as the column number) and make this the value of r. The last step then throws away the redundant column we had with the row names in it. You can try this out line by line in R and look at what happens to the value of 'r' after each step to see what is going on. Remember that 'r' can do these kinds of operations for enormous tables so using large bodies of data is generally straightforward. After do this, if we look at r we have precisely the contingency table that we want, as we can see in the following:
+what this does in words is (line-by-line): take a copy of the data that we just imported in kong_data and call it r. Use the values in all of the first column (indicated by the square brackets after r) to set the names of the rows of that data frame (with rownames). Then take all the columns *apart* from the first one (indicated by using '-1' as the column number) and make this the value of r. The last step then throws away the redundant column we had with the row names in it. You can try this out line by line in R and look at what happens to the value of 'r' after each step to see what is going on. Remember that R can do these kinds of operations for enormous tables so using large bodies of data is generally straightforward. After do this, if we look at 'r' we have precisely the contingency table that we want, as we can see in the following:
 
-![Kong's data as a data frame](kong_data.png)
+![Kong's data as a data frame: View( kong_data )](kong_data.png)
 
 Note that the rows are now given proper names rather than just numbers as in the examples above. If we have a table such as this, then the chi-square test is straightforward:
 
 ```
-> chisq.test(r)
+> chisq.test( r )
 
 	Pearson's Chi-squared test
 
@@ -246,7 +246,7 @@ so, again, we see that the differences between the various conditions are highly
 There are a range of similar tests that one can perform with the data in this form. For example, Fisher's exact test is sometimes considered to be more accurate than the chi-square test, especially when the counts are low. Here is how we can perform the test in R:
 
 ```
-> fisher.test(r)
+> fisher.test( r )
 
 	Fisher's Exact Test for Count Data
 
@@ -257,7 +257,7 @@ alternative hypothesis: two.sided
 
 In this case we obtain more or less the same result because the counts were in any case quite high and so we were not running into accuracy problems with chi-square anyway.
 
-
+And, again, there are some online websites where you could also type in the values of the contingency table and get the same results, for example: https://www.socscistatistics.com/tests/chisquare2/default2.aspx
 
 ## Measuring statistical power
 
