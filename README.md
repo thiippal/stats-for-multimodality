@@ -161,6 +161,43 @@ Having all the information is the same dataframe is very useful for more advance
 ### t-test
 As described in the paper, the t-test is a way of finding whether two collections of data have significantly different means or not: if they do, then there are good grounds for considering there to be some difference between data collected according to the two conditions compared. Performing a t-test in R is extremely easy - first, as usual, here is a csv-file containing two columns of numbers, which correspond to measured or observed values from two samples, regardless of how these were collected: [here](./t-test-data-same-1.csv) (test data for the t-test).
 
+Lets now load these into R using the usual csv import mechanism described above, so that we should end up with a data frame with the somewhat unwieldy name t_test_data_same_1; that is a bit of a mouthful, so we put the data in a variable with a simpler name just to help. So, the code generated to load the csv file automatically is the following:  
+
+```
+library(readr)
+t_test_data_1_same <- read_delim( "... location of file ... /t-test-data-1-same.csv", ";", escape_double = FALSE, col_names = FALSE, trim_ws = TRUE) 
+```
+
+Lets rename the data frame (we could also do this by changing the generated R code directly of course):
+
+```data <- t_test_data_1_same```
+
+As noted before, this data frame has two columns; we didn't specify any names for these two columns, so they get the R default names 'X1' and 'X2', also as above. This means that the data from the first group is accessibe with the extraction expression:
+
+```data$X1'''
+
+and the second similarly. Performing a t-test is then just:
+
+```t.test( data$X1, data$X2 )```
+
+giving the result:
+
+```
+	Welch Two Sample t-test
+
+data:  data$X1 and data$X2
+t = -0.75614, df = 37.952, p-value = 0.4542
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -11.583743   5.283743
+sample estimates:
+mean of x mean of y 
+    62.70     65.85 
+```
+
+which tells us that there is no significant difference between the means of the two data sets (i.e., 62.7, 65.85), because the p-value is 0.4252. This is the example data used in the statistics chapter of our introduction to multimodality: Bateman, Wildfeuer and Hiippala (2017).
+
+Note also that there are websites that do similar tasks for you - for example, copying the data of the two columns into the website https://www.socscistatistics.com/tests/studentttest/default2.aspx quickly gives the same results, but without the self-documentation that using R provides you with.
 
 ## Measuring statistical power
 
