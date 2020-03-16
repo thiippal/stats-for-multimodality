@@ -172,9 +172,9 @@ Lets rename the data frame (we could also do this by changing the generated R co
 
 ```data <- t_test_data_1_same```
 
-As noted before, this data frame has two columns; we didn't specify any names for these two columns, so they get the R default names 'X1' and 'X2', also as above. This means that the data from the first group is accessibe with the extraction expression:
+As noted before, this data frame has two columns; we didn't specify any names for these two columns, so they get the R default names 'X1' and 'X2', also as above. This means that the data from the first group is accessible with the extraction expression:
 
-```data$X1'''
+```data$X1```
 
 and the second similarly. Performing a t-test is then just:
 
