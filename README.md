@@ -228,7 +228,15 @@ This makes a data frame called 'r' (short for results) that has just the values 
 
 ![Kong's data as a data frame: View( r )](kong-data-pre.png)
 
-If we have a table such as this, then the chi-square test is straightforward:
+And, of course, you could even just make the same result by typing in the numbers in your data: i.e., you'd get the same result (at least in terms of the shape of the table) by typing:
+
+```
+> r <- data.frame( c (1551, 560, 133), c (1653, 255, 26) )
+```
+
+which uses R's collect function to collect numbers together into lists. But clearly you should not really be retyping information that you already have in your computer in any case! It pays to be 'lazy': a little more thought usually saves a lot of time down the road.
+
+Then, when you have tables such as these, then the chi-square test is straightforward:
 
 ```
 > chisq.test( r )
