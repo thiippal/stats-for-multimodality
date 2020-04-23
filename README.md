@@ -201,7 +201,7 @@ Note also that there are websites that do similar tasks for you - for example, c
 
 ### chi-square test
 
-Noe lets do exactly the same for the chi-square test. Here we take the data from Kong as given in the paper: [here](./kong-data.csv) (Kong's data comparing the Sun and the Oriental Daily). The structure of this data frame is a little more interesting as, as described in our paper, we are dealing here with a 2x3 contingency table, with two newspapers and counts for three kinds of multimodal information: text, photographs and diagrams. This means that we should obtain both sensible rows and columns in the resulting data frame when we import it. Using the import tool as before to create the data frame generates the following code:
+Now lets do exactly the same for the chi-square test. Here we take the data from Kong as given in the paper: [here](./kong-data.csv) (Kong's data comparing the Sun and the Oriental Daily). The structure of this data frame is a little more interesting as, as described in our paper, we are dealing here with a 2x3 contingency table, with two newspapers and counts for three kinds of multimodal information: text, photographs and diagrams. This means that we should obtain both sensible rows and columns in the resulting data frame when we import it. Using the import tool as before to create the data frame generates the following code:
 
 ```
 ibrary(readr)
@@ -220,9 +220,9 @@ Now, the chi-square test works with a contingency table, so we have to make sure
 
 We've already seen how we can get the values that interest us from the columns, so one way of getting the data in a properly shaped table would be as follows, where we simply grab the values we need and recombine them in a 'data frame' representing the table. You can do this as follows:
 
-...
-> r <- data.frame (kong_data$`Oriental Daily`, kong_data$`The Sun`)
-...
+```
+> r <- data.frame( kong_data$`Oriental Daily`, kong_data$`The Sun` )
+```
 
 This makes a data frame called 'r' (short for results) that has just the values we want and nothing extra.  if we look at the value of 'r'  we have precisely the contingency table that we want, as we can see in the following:
 
