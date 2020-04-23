@@ -216,17 +216,15 @@ more or less as before. The first column is where the names of the rows ends up;
 ```
 to get the counts for that newspaper. 
 
-The chi-square test works with a contingency table, so now we need more than just the columns alone, we need to get a little table containing the scores. As suggested above, manipulating data so as to push it into shape for the various statistical tests is a common practice in R and R makes it relatively straightforward, usually offering several ways to achieve the same effect. Searching on the web for the particular task that you want to perform is usually the best way of getting to solutions very quickly because someone will usually have wanted to do the same before!
+Now, the chi-square test works with a contingency table, so we have to make sure that we have an appropriately organised table to pass on to the R-function that does the work. This contingency table should have rows for one of the variables being compared and columns for the other variable. It is important that you get the shape of this table right, otherwise the functions might just produce nonsense values or error messages that have nothing to do with the actual values that you want to compare. From loading in our kong_data data frame, we get a table, but one which is not quite the right shape. We have one set of values in each column, which is close, but we also have an extra column with row names (as you can see if you look at the value of the variable kong_data in R) as well: this latter is extra to requirements. The chi square and related functions need to have the right shape table given to them, otherwise they cannot work out the proper degrees of freedom and, indeed, would not know just which bits of the data you want to compare.
 
-Lets do some R to turn the table that we read in (with an extra column containing the row names) to a proper data frame that only includes the values we want and has proper column and row names. We'll do this with some 'quick and dirty' R as follows:
+We've already seen how we can get the values that interest us from the columns, so one way of getting the data in a properly shaped table would be as follows, where we simply grab the values we need and recombine them in a 'data frame' representing the table. You can do this as follows:
 
-```
-r <- as.data.frame( kong_data )
-rownames( r ) <- r[, 1]
-r <- r[, -1]
-```
+...
+> r <- data.frame (kong_data$`Oriental Daily`, kong_data$`The Sun`)
+...
 
-what this does in words is (line-by-line): take a copy of the data that we just imported in kong_data and call it r. Use the values in all of the first column (indicated by the square brackets after r) to set the names of the rows of that data frame (with rownames). Then take all the columns *apart* from the first one (indicated by using '-1' as the column number) and make this the value of r. The last step then throws away the redundant column we had with the row names in it. You can try this out line by line in R and look at what happens to the value of 'r' after each step to see what is going on. Remember that R can do these kinds of operations for enormous tables so using large bodies of data is generally straightforward. After do this, if we look at 'r' we have precisely the contingency table that we want, as we can see in the following:
+This makes a data frame called 'r' (short for results) that has just the values we want and nothing extra.  if we look at the value of 'r'  we have precisely the contingency table that we want, as we can see in the following:
 
 ![Kong's data as a data frame: View( kong_data )](kong_data.png)
 
@@ -241,9 +239,19 @@ data:  r
 X-squared = 167.31, df = 2, p-value < 2.2e-16
 ```
 
-so, again, we see that the differences between the various conditions are highly significant.
+So, again, we see that the differences between the various conditions are highly significant.
 
-There are a range of similar tests that one can perform with the data in this form. For example, Fisher's exact test is sometimes considered to be more accurate than the chi-square test, especially when the counts are low. Here is how we can perform the test in R:
+As suggested above, manipulating data so as to push it into shape for the various statistical tests is a common practice in R and R makes it relatively straightforward, usually offering several ways to achieve the same effect. Searching on the web for the particular task that you want to perform is usually the best way of getting to solutions very quickly because someone will usually have wanted to do the same before! As an example and to offer a bit more practice with R, here is a slight more 'clever' (some might say contorted or 'quick and dirty'!) way of turning the original data that we read in above (i.e., the one with the extra column containing the row names) to a proper data frame that only includes the values we want and has proper column and row names:
+
+```
+r <- as.data.frame( kong_data )
+rownames( r ) <- r[, 1]
+r <- r[, -1]
+```
+
+what this does in words is (line-by-line): take a copy of the data that we just imported in kong_data and call it r. Use the values in all of the first column (indicated by the square brackets after r) to set the names of the rows of that data frame (with rownames). Then take all the columns *apart* from the first one (indicated by using '-1' as the column number) and make this the value of r. The last step then throws away the redundant column we had with the row names in it. You can try this out line by line in R and look at what happens to the value of 'r' after each step to see what is going on. Remember that R can do these kinds of operations for enormous tables so using large bodies of data is generally straightforward. After do this, if we look at this newly made value of 'r', we can see that is has precisely the same form as the table we made above. The 'advantage' to this last approach is just that we didn't need to take the table apart and then put it back together again, but it does not really make much difference how you get to the final table, as long as it has the form needed.
+
+There are a range of similar tests that one can perform with the data in this form. For example, Fisher's exact test is often considered to be more reliable than the chi-square test, especially when the counts are low. Here is how we can perform the test in R:
 
 ```
 > fisher.test( r )
